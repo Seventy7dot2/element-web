@@ -1,41 +1,14 @@
-/*
-Copyright 2019-2024 New Vector Ltd.
-
-SPDX-License-Identifier: AGPL-3.0-only OR GPL-3.0-only
-Please see LICENSE files in the repository root for full details.
-*/
-
 import * as React from "react";
-import SdkConfig from "matrix-react-sdk/src/SdkConfig";
-
-import VectorAuthFooter from "./VectorAuthFooter";
 
 export default class VectorAuthPage extends React.PureComponent {
-    private static welcomeBackgroundUrl?: string;
-
     // cache the url as a static to prevent it changing without refreshing
-    private static getWelcomeBackgroundUrl(): string {
-        if (VectorAuthPage.welcomeBackgroundUrl) return VectorAuthPage.welcomeBackgroundUrl;
-
-        const brandingConfig = SdkConfig.getObject("branding");
-        VectorAuthPage.welcomeBackgroundUrl = "themes/element/img/backgrounds/lake.jpg";
-
-        const configuredUrl = brandingConfig?.get("welcome_background_url");
-        if (configuredUrl) {
-            if (Array.isArray(configuredUrl)) {
-                const index = Math.floor(Math.random() * configuredUrl.length);
-                VectorAuthPage.welcomeBackgroundUrl = configuredUrl[index];
-            } else {
-                VectorAuthPage.welcomeBackgroundUrl = configuredUrl;
-            }
-        }
-
-        return VectorAuthPage.welcomeBackgroundUrl;
+    private static getWelcomeBackgroundColor(): string {
+        return "#1C1C1C"; // Return the desired color
     }
 
     public render(): React.ReactElement {
         const pageStyle = {
-            background: `center/cover fixed url(${VectorAuthPage.getWelcomeBackgroundUrl()})`,
+            background: VectorAuthPage.getWelcomeBackgroundColor(),
         };
 
         const modalStyle: React.CSSProperties = {
@@ -68,7 +41,6 @@ export default class VectorAuthPage extends React.PureComponent {
                         {this.props.children}
                     </div>
                 </div>
-                <VectorAuthFooter />
             </div>
         );
     }
