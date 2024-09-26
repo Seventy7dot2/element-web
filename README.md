@@ -121,7 +121,7 @@ guide](https://classic.yarnpkg.com/en/docs/install) if you do not have it alread
 
 1. Install or update `node.js` so that your `node` is at least the current recommended LTS.
 1. Install `yarn` if not present already.
-1. Clone the repo: `git clone https://github.com/element-hq/element-web.git`.
+1. Clone the repo: `git clone https://github.com/Seventy7dot2/element-web.git`.
 1. Switch to the element-web directory: `cd element-web`.
 1. Install the prerequisites: `yarn install`.
     - If you're using the `develop` branch, then it is recommended to set up a
@@ -230,7 +230,7 @@ popd
 Then similarly with `matrix-react-sdk`:
 
 ```bash
-git clone https://github.com/matrix-org/matrix-react-sdk.git
+git clone https://github.com/Seventy7dot2/matrix-react-sdk.git
 pushd matrix-react-sdk
 yarn link
 yarn link matrix-js-sdk
@@ -241,7 +241,7 @@ popd
 Clone the repo and switch to the `element-web` directory:
 
 ```bash
-git clone https://github.com/element-hq/element-web.git
+git clone https://github.com/Seventy7dot2/element-web.git
 cd element-web
 ```
 
